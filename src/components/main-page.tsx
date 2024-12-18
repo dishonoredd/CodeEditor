@@ -9,7 +9,7 @@ import { Lang } from "./lang";
 import { api } from "../api/api";
 import { defaultGoValue, defaultValue as defaultJsValue } from "./constants";
 import { localStorageProvider } from "../local-storage.lib";
-import { Select, Switch } from "antd";
+import { Select } from "antd";
 import { go } from "@codemirror/lang-go";
 
 export const MainPage = () => {
