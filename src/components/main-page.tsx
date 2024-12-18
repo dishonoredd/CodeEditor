@@ -7,18 +7,17 @@ import { javascript } from "@codemirror/lang-javascript";
 import { sublime } from "@uiw/codemirror-theme-sublime";
 import { Lang } from "./lang";
 import { api } from "../api/api";
-import { defaultValue } from "./constants";
+import { defaultGoValue, defaultValue as defaultJsValue } from "./constants";
 import { localStorageProvider } from "../local-storage.lib";
-
+import { Select, Switch } from "antd";
 import { go } from "@codemirror/lang-go";
 
 export const MainPage = () => {
   const [logs, setLogs] = useState<Message[]>([]);
   const [lang, setLang] = useState<Lang>(Lang.JS);
   const [value, setValue] = useState(
-    localStorageProvider.getCode() || defaultValue
+    localStorageProvider.getCode() || defaultJsValue
   );
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -69,6 +68,8 @@ export const MainPage = () => {
     };
   }, []);
 
+  const languages: Lang[] = [Lang.JS, Lang.GO];
+
   return (
     <>
       <header className={css.header}>
@@ -80,28 +81,26 @@ export const MainPage = () => {
           >
             {loading ? "Loading..." : "Run Code"}
           </button>
-          <button
-            className={css.btn}
-            onClick={() => {
+          <Select
+            defaultValue={Lang.JS}
+            value={lang}
+            placeholder="Language"
+            onChange={(value: Lang) => {
               setLogs([]);
-              setValue("");
-              setLang(Lang.GO);
+              if (value === Lang.GO) {
+                setValue(defaultGoValue);
+              } else {
+                setValue(defaultJsValue);
+              }
+              setLang(value);
             }}
-            disabled={lang === Lang.GO}
-          >
-            GoLang
-          </button>
-          <button
-            className={css.btn}
-            onClick={() => {
-              setLogs([]);
-              setValue("");
-              setLang(Lang.JS);
-            }}
-            disabled={lang === Lang.JS}
-          >
-            JS
-          </button>
+            options={languages.map((lang) => {
+              return {
+                value: lang,
+                label: lang,
+              };
+            })}
+          ></Select>
           <button
             className={css.btn}
             onClick={() => {
@@ -109,9 +108,10 @@ export const MainPage = () => {
             }}
           >
             Clear
-          </button>{" "}
+          </button>
           <label className={css.label}>
-            <p>Включить ошибку от сервера</p>
+            <span className={css.pc}>Enable fake server error</span>
+            <span className={css.mobile}>Error</span>
             <input
               type="checkbox"
               checked={error}
@@ -120,10 +120,9 @@ export const MainPage = () => {
           </label>
         </div>
       </header>
-
       <section className={css.mainSection}>
         <CodeMirror
-          style={{ fontFamily: "consolas" }}
+          style={{ fontFamily: "consolas", overflow: "hidden" }}
           height="100%"
           value={value}
           extensions={

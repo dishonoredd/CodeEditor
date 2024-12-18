@@ -5,11 +5,6 @@
   background-color: rgb(83, 106, 223);
   border-radius: 5px;
   color: white;
-
-  &[disabled] {
-    pointer-events: none;
-    background-color: rgb(67, 75, 118);
-  }
 }
 
 .btn:hover {
@@ -31,6 +26,7 @@
   display: flex;
   gap: 12px;
   color: #fff;
+
   align-items: center;
 }
 
@@ -38,6 +34,7 @@
   height: calc(100vh - 46px);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  overflow: auto;
 }
 
 .console {
@@ -48,4 +45,33 @@
 
 .console div {
   overflow: hidden;
+}
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .mainSection {
+    height: calc(100vh - 46px);
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .btn {
+    padding: 10px;
+    font-size: 10px;
+    border: 0px;
+    cursor: pointer;
+    background-color: rgb(83, 106, 223);
+    border-radius: 5px;
+    color: white;
+  }
+  .mobile {
+    display: flex;
+  }
+  .pc {
+    display: none;
+  }
+  body {
+    overflow: hidden;
+  }
 }

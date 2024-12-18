@@ -32,7 +32,7 @@ export const api = {
     if (payload.language === Lang.GO) {
       return {
         status: "success",
-        output: "Hello, world from python!\n",
+        output: "Hello, 世界",
       };
     }
 
