@@ -1,0 +1,51 @@
+.btn {
+  padding: 5px 20px;
+  border: 0px;
+  cursor: pointer;
+  background-color: rgb(83, 106, 223);
+  border-radius: 5px;
+  color: white;
+
+  &[disabled] {
+    pointer-events: none;
+    background-color: rgb(67, 75, 118);
+  }
+}
+
+.btn:hover {
+  background-color: rgb(68, 87, 184);
+}
+
+.header {
+  background-color: #000413de;
+  padding: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.label {
+  display: flex;
+  gap: 12px;
+  color: #fff;
+  align-items: center;
+}
+
+.mainSection {
+  height: calc(100vh - 46px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.console {
+  height: 100%;
+  background-color: #000919de !important;
+  overflow: auto;
+}
+
+.console div {
+  overflow: hidden;
+}
