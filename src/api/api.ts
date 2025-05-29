@@ -6,7 +6,7 @@ type RunPayload = {
 };
 
 type SuccessResponse = {
-  status: "success";
+  status: "success" | "error";
   output: string;
 };
 
