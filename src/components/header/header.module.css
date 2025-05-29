@@ -1,3 +1,13 @@
+.header {
+  background-color: #000413de;
+  padding: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .btn {
   padding: 5px 20px;
   border: 0px;
@@ -11,17 +21,6 @@
   background-color: rgb(68, 87, 184);
 }
 
-.header {
-  background-color: #000413de;
-  padding: 10px;
-}
-
-.buttons {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 .label {
   display: flex;
   gap: 12px;
@@ -30,32 +29,11 @@
   align-items: center;
 }
 
-.mainSection {
-  height: calc(100vh - 46px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: auto;
-}
-
-.console {
-  height: 100%;
-  background-color: #000919de !important;
-  overflow: auto;
-}
-
-.console div {
-  overflow: hidden;
-}
 .mobile {
   display: none;
 }
 
 @media screen and (max-width: 750px) {
-  .mainSection {
-    height: calc(100vh - 46px);
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
-  }
   .btn {
     padding: 10px;
     font-size: 10px;

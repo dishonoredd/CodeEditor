@@ -1,5 +1,5 @@
 import { Select } from "antd";
-import css from "/src/styles/code-input.module.css";
+import css from "/src/components/header/header.module.css";
 import { useState } from "react";
 
 import { api } from "../../api/api";
@@ -85,15 +85,17 @@ export const Header = (props: HeaderProps) => {
         >
           Clear
         </button>
-        <label className={css.label}>
-          <span className={css.pc}>Enable fake server error</span>
-          <span className={css.mobile}>Error</span>
-          <input
-            type="checkbox"
-            checked={error}
-            onChange={(ev) => setError(ev.target.checked)}
-          />
-        </label>
+        {lang === Lang.GO && (
+          <label className={css.label}>
+            <span className={css.pc}>Enable fake server error</span>
+            <span className={css.mobile}>Error</span>
+            <input
+              type="checkbox"
+              checked={error}
+              onChange={(ev) => setError(ev.target.checked)}
+            />
+          </label>
+        )}
       </div>
     </header>
   );

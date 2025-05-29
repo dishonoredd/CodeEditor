@@ -1,11 +1,11 @@
 import CodeMirror, { EditorView } from "@uiw/react-codemirror";
-import css from "/src/styles/code-input.module.css";
+import css from "/src/components/codemirror/codemirror.module.css";
 import { useAppDispatch, useAppSelector, valueSlice } from "../../store";
 import { Lang } from "../lang";
 import { javascript } from "@codemirror/lang-javascript";
 import { go } from "@codemirror/lang-go";
 import { sublime } from "@uiw/codemirror-theme-sublime";
-import { Console, Hook, Unhook } from "console-feed";
+import { Console } from "console-feed";
 import { useCallback, useEffect, useRef } from "react";
 import { localStorageProvider } from "../../local-storage.lib";
 import { Message } from "console-feed/lib/definitions/Component";

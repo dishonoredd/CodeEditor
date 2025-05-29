@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Lang } from "./components/lang";
 import { localStorageProvider } from "./local-storage.lib";
 import { defaultValue } from "./constants/constants";
-import { Message } from "console-feed/lib/definitions/Component";
 
 type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;
@@ -11,20 +10,12 @@ type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 
-type InitialLogType = {
-  logs: Message[];
-};
-
 const initialStateLang = {
   lang: Lang.JS,
 };
 
 const initialStateValue = {
   value: localStorageProvider.getCode() || defaultValue,
-};
-
-const initialStateLog: InitialLogType = {
-  logs: [],
 };
 
 export const langSlice = createSlice({
