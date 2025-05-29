@@ -12,13 +12,14 @@
   padding: 5px 20px;
   border: 0px;
   cursor: pointer;
-  background-color: rgb(83, 106, 223);
+  background-color: rgb(83, 127, 223);
   border-radius: 5px;
   color: white;
+  transition: 0.2s;
 }
 
 .btn:hover {
-  background-color: rgb(68, 87, 184);
+  background-color: rgb(61, 94, 165);
 }
 
 .label {
