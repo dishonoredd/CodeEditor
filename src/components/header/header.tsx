@@ -16,7 +16,7 @@ import {
 import { Lang } from "../lang";
 
 type HeaderProps = {
-  setLogs: (messageArr: Message[]) => void;
+  setLogs: (arr: Message[]) => void;
 };
 
 export const Header = (props: HeaderProps) => {
