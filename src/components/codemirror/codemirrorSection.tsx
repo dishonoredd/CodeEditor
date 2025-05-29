@@ -1,7 +1,7 @@
 import CodeMirror, { EditorView } from "@uiw/react-codemirror";
 import css from "/src/components/codemirror/codemirror.module.css";
 import { useAppDispatch, useAppSelector, valueSlice } from "../../store";
-import { Lang } from "../lang";
+import { Lang } from "../../constants/lang";
 import { javascript } from "@codemirror/lang-javascript";
 import { go } from "@codemirror/lang-go";
 import { sublime } from "@uiw/codemirror-theme-sublime";

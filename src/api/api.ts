@@ -1,4 +1,4 @@
-import { Lang } from "../components/lang";
+import { Lang } from "../constants/lang";
 
 type RunPayload = {
   language: Lang;

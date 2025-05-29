@@ -1,6 +1,6 @@
 import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import { Lang } from "./components/lang";
+import { Lang } from "./constants/lang";
 import { localStorageProvider } from "./local-storage.lib";
 import { defaultValue } from "./constants/constants";
 

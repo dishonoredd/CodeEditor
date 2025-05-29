@@ -13,7 +13,7 @@ import {
   useAppSelector,
   valueSlice,
 } from "../../store";
-import { Lang } from "../lang";
+import { Lang } from "../../constants/lang";
 
 type HeaderProps = {
   setLogs: (arr: Message[]) => void;
